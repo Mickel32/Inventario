@@ -1,0 +1,20 @@
+.login{
+	position:fixed;
+	align-items: center;
+	margin-top: 10%;
+	height: 500px;
+	width: 500px;
+	background-color: grey;
+	left:38%;
+	
+}
+
+H2{
+	text-align: center;
+	color: white;
+}
+
+body{
+	background: url(../img/Fondo.jpg) no-repeat center center fixed;
+	background-size:cover;
+}
