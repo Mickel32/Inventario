@@ -1,20 +1,95 @@
+
 .login{
-	position:fixed;
-	align-items: center;
-	margin-top: 10%;
+	background-color: rgb(51,51,51, 0.700);
+	position:absolute;
+	top: 25%;
 	height: 500px;
-	width: 500px;
-	background-color: grey;
-	left:38%;
-	
+	width: 400px;
+	left:40vw;
+	border-radius: 5%;
+	box-sizing: border-box;
+	padding: 80px 50px;
+	color: white;
+
 }
 
+
+.login img{
+	width:150px;
+	height:150px;
+	position: absolute;
+	top: -70px;
+	left: 32%;
+}
+
+.login label{
+	margin:0;
+	padding:0;
+	display:block;
+	font-weight: bold;
+}
+
+.login a{
+	display:block;
+	width:170px;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: 20px;
+	color: darkgrey;
+	margin-bottom: 5px;
+}
+
+.login a:hover{
+	color:white;
+}
+
+
 H2{
+	padding:0;
+	margin-bottom: 5px;
 	text-align: center;
 	color: white;
+	font-weight: bold;
+	font-size: 2em;
 }
 
 body{
+	margin: 0;
+	padding:0;
 	background: url(../img/Fondo.jpg) no-repeat center center fixed;
 	background-size:cover;
 }
+
+.login input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.login input[type="text"],  
+.login input[type="text"]{
+	border:none;
+	border-bottom: 1px solid white;
+	background-color:transparent;
+	outline:none;
+	font-size: .9em;
+	height:40px;
+	color: white;
+	
+}
+
+.login input[type="submit"]{
+	height:40px;
+	border:none;
+	outline:none;
+	background-color:#4b97d2;
+	border-radius: 20px;
+	font-size: 1em;
+	color:white;
+	font-weight: bold;
+}
+
+.login input[type="submit"]:hover{
+	background-color:#61B8F5;
+	cursor:pointer;
+	}
+	

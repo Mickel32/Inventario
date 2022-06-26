@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -25,17 +26,22 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO, generator="native")
 	@GenericGenerator(name="native", strategy="native")
-	private Long id;
+	public Long id;
 	
 	@Column
+	@NotBlank
 	private String Nombre;
-	@Column 
+	@Column
+	@NotBlank
 	private String Apellidos;
-	@Column (unique = true) 
+	@Column (unique = true)
+	@NotBlank
 	private String email;
 	@Column (unique = true)
+	@NotBlank
 	private String usuario;
 	@Column
+	@NotBlank
 	private String password;
 	
 	@Transient
@@ -143,6 +149,7 @@ public class Usuario implements Serializable{
 				&& Objects.equals(roles, other.roles) && Objects.equals(usuario, other.usuario);
 	}
 	
-	
-
+	public Usuario() {
+		super();
+	}
 }
