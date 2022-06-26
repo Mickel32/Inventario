@@ -20,9 +20,17 @@ public class UserServiceImp implements UserService{
 	}
 	
 	private boolean comprobarusuario(Usuario usuario) throws Exception {
-		Optional<Usuario> userFound = repository.findByUsiario(usuario.getUsuario());
+		Optional<Usuario> userFound = repository.findByUsuario(usuario.getUsuario());
 		if(userFound.isPresent()) {
 			throw new Exception("Usuario no disponible");
+		}
+		return true;
+	}
+	
+	private boolean comprobaremail(Usuario usuario) throws Exception {
+		Optional<Usuario> userFound = repository.findByEmail(usuario.getEmail());
+		if(userFound.isPresent()) {
+			throw new Exception("El email ya esta registrado");
 		}
 		return true;
 	}
@@ -32,5 +40,13 @@ public class UserServiceImp implements UserService{
 			throw new Exception("Las contraseñas no coinciden");
 		}
 		return true;
+	}
+
+	@Override
+	public Usuario createUser(Usuario usuario) throws Exception {
+		if(comprobarusuario(usuario) && comprobarpassword(usuario) && comprobaremail(usuario)) {
+			usuario = repository.save(usuario);
+		}
+		return usuario;
 	}
 }

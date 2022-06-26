@@ -10,6 +10,8 @@ import com.example.demo.entity.Usuario;
 @Repository
 public interface UserRepository extends CrudRepository<Usuario, Long>{
 	
-	public Optional<Usuario> findByUsiario(String usuario);
+	public Optional<Usuario> findByUsuario(String usuario);
+
+	public Optional<Usuario> findByEmail(String email);
 
 }
