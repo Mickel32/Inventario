@@ -26,7 +26,7 @@ public class userController {
 	@Autowired
 	RolRepository rolRepository;
 	
-	@GetMapping("/")
+	@GetMapping({"/","/login"})
 	public String index(){
 		return "index";
 	}

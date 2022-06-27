@@ -37,7 +37,7 @@
  	<div class="form-group row">
  		<label th:text="Roles" class="col-lg-3 col-form-label form-control-label"></label>
  		<div class="col-lg-9">
- 			<select class="form-control" size="3" th:field="${userform.roles}">
+ 			<select class="form-control" size="1" th:field="${userform.roles}">
  				<option th:each="rol :${roles}" th:value="${rol.id}" th:text="${rol.name}">
  				<div class="alert-danger" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}">Name Error</div>
  				</option>

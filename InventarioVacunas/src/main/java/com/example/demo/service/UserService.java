@@ -1,8 +1,7 @@
 package com.example.demo.service;
 
-import javax.validation.Valid;
-
 import com.example.demo.entity.Usuario;
+import javax.validation.Valid;
 
 public interface UserService {
 	

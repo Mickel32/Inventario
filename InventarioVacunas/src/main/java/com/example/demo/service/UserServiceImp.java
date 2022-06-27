@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Usuario;
@@ -13,6 +14,10 @@ public class UserServiceImp implements UserService{
 
 	@Autowired
 	UserRepository repository;
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	
 	
 	@Override
 	public Iterable<Usuario> getAllUsers(){
@@ -45,6 +50,8 @@ public class UserServiceImp implements UserService{
 	@Override
 	public Usuario createUser(Usuario usuario) throws Exception {
 		if(comprobarusuario(usuario) && comprobarpassword(usuario) && comprobaremail(usuario)) {
+			String encodePassword = bCryptPasswordEncoder.encode(usuario.getPassword());
+			usuario.setPassword(encodePassword);
 			usuario = repository.save(usuario);
 		}
 		return usuario;
